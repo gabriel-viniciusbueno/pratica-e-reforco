@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <script>
+        // Arrow functions
+
+        //Uma arrow function não é declarada (sem nome) e ela não precisa mais da palavra function, apenas da estrutura dos parênteses, uma "flecha" e as chaves
+
+        const name = () => {
+            return "isso é uma arrow function"
+        }
+
+        const getRemainingYears = (age) => {
+            return 18 - age;
+        }
+
+        // Um detalhe positivo da arrow function é o retorno imediato, ou seja, a forma como conseguimos abreviar a arrow function. EX:
+
+        const getRemainingYears2 = (age) => 18 - age;
+
+        console.log(getRemainingYears2(15));
+
+        // Trabalhar com contexto(utilizar this) em arrow functions é complicado, pois ela ignora o contexto onde ela foi declarada. O contexto das arrow functions é como se fosse na raiz
+
+        //Nem mesmo os métodos call e apply conseguem aplicar um contexto às arrow functions
+
+    </script>
+</body>
+</html>

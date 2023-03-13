@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argumentos de função</title>
+</head>
+<body>
+    <script>
+        function sum () {
+            // Arguments é uma palavra reservada que não é disponível em arrow functions
+            return argument[0] + argument[1]
+        }
+
+        // Podemos dar um valor padrão para o argumento
+        function soma (a, b = 7){
+            return a + b
+        }
+
+        const somando = (a, b = 7) => a + b
+
+
+    </script>
+
+</body>
+</html>
