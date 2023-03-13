@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function.call e Function.apply</title>
+</head>
+<body>
+    
+    <script>
+        function sum (a, b){
+            console.log(this)
+            return a + b
+        }
+
+        const me = {name: 'gabriel'}
+
+        //function.call é um método que recebe como parâmetro o contexto na qual ele será executado
+        sum.call(me, 1, 2)
+
+        //function.apply é parecido porém o jeito que passamos os parâmetros é diferente, ela espera receber em um array
+
+        sum.apply(me, [1,2])
+    </script>
+
+</body>
+</html>

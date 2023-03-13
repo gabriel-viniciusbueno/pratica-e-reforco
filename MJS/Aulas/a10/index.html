@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNCTION e THIS</title>
+</head>
+<body>
+    <script>
+
+        function greet (){
+            console.log("Compreensível, tenha um bom dia!")
+            console.log(this); // vai fazer referência ao objeto global window
+        }
+
+        const me = {
+            name: "gabriel",
+            age: 19,
+            greet (){
+                console.log(this)
+                // vai fazer referência ao objeto em si
+                return 'algo'
+            }
+        }
+
+        function getRemaingYears (age){
+            return 18 - age
+        }
+
+        const remaingYears = getRemaingYears(15);
+        // se não executar a função, a constante seria apenas uma referência à função
+
+        
+    </script>
+</body>
+</html>
