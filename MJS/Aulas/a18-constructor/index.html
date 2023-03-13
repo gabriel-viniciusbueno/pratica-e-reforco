@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+<body>
+    <script>
+        class Human {
+            hungry = true
+            name
+            age
+            sex
+
+            //Podemos deixar o parâmetro como um objeto
+            constructor(props) {
+                this.name = props.name;
+                this.age = props.age;
+                this.sex = props.sex;
+            }
+            
+            eat (){
+                this.hungry = false;
+            }
+        }
+
+        const person = new Human({
+            name: 'gabriel',
+            age: 19,
+            sex: 'male'
+        })
+    </script>
+</body>
+</html>
