@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Intervalos</title>
+</head>
+<body>
+    <script>
+        //SetTimeout vai esperar um certo tempo e então executar o que está em seu primeiro parâmetro (no caso, o comando em si)
+        //SetTimeout recebe 2 parâmetros. O parâmetro do tempo é dado em milisegundos
+        setTimeout(() => {
+            alert('executou')
+        }, 5000)
+
+
+        const chatao = setInterval(() => {
+            alert('eu sou chato eu sou um setInterval kkkkkkk otario')
+        },5000)
+
+        //Podemos utilizar um setTimeout para para um setInterval
+        setTimeout(() => {
+            clearInterval(chatao);
+        }, 10000)
+    </script>
+</body>
+</html>
