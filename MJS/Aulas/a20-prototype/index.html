@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <script>
+        class Human {
+            hungry = true
+            awake = true
+            eat (){
+                this.hungry = false
+            }
+        }
+        
+        //Se vamos injetar propriedades em classes, é necessário que seja com funções e não com arrow functions
+        Human.prototype.sleep = function (){
+            this.awake = false
+        }
+
+        const person = new Human()
+    </script>
+    
+</body>
+</html>
