@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+</head>
+<body>
+    <script>
+        // Um erro será mostrado pois a função ainda não foi declarada
+        // const result = sum(1, 2)
+        // const sum = (a = 1, b = 5) => a + b
+
+        // const result = sum(1, 2)
+        // console.log(result)
+
+
+
+        //Agora não dará erro. Isso porque a função normal possui hoisting, ela "iça" algumas partes do código para cima. Assim, executando primeiro a declaração da função, e só depois o 'result'
+        const result = sum(1, 2)
+        function sum (a = 1, b = 2){
+            return a + b
+        }
+
+        console.log(result)
+
+
+    </script>
+</body>
+</html>
