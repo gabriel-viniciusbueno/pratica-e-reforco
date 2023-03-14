@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapeando itens com Array Map</title>
+</head>
+<body>
+    <script>
+        const fruits = ['banana', 'morango', 'manga']
+
+
+
+
+        //Aparentemente .map e .forEach fazem a mesma coisa
+        // fruits.forEach(fruit =>{
+        //     console.log(fruit.toUpperCase)
+        // })
+
+            //Porém se colocarmos o elemento dentro de uma variável
+        const capitalizedFruits = fruits.map(fruit =>{
+            return fruit.toUpperCase()
+        })
+            //O retorno será de um array de 3 índices undefined, pois não passamos um RETURN
+
+        console.log(capitalizedFruits)
+        console.log(fruits)
+            //O método MAP serve para que possamos iterar sobre uma lista e retornar um valor específico para ela, ou seja, remapear o array
+    </script>
+</body>
+</html>

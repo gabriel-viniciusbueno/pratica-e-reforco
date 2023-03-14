@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudando ForEach</title>
+</head>
+<body>
+    <script>
+        const fruits = ['banana', 'manga', 'laranja']
+
+        function eatAllFruits () {
+            //Para cada um dos itens que estão nesse array, vou executar esse bloco de comando
+            fruits.forEach((fruit, index) => {
+                console.log(`acabei de comer uma ${fruit}`)
+                console.log(`era o ${index + 1} item da minha lista`)
+            })
+        }
+        //Podemos adicionar um segundo parâmetro em forEach que pega o índice do elemento que estamos iterando
+
+        eatAllFruits()
+    </script>
+</body>
+</html>
