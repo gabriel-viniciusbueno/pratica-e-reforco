@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Operator</title>
+</head>
+<body>
+    <script>
+        //O objetivo é separar os argumentos entre 'contatos' e 'não contatos'
+        function createUser (name, age, ...contacts){
+            return{
+                name,
+                age,
+                contacts
+                // contacts: arguments.slice(2) não é possivel pq não é um array
+            }
+        }
+
+        // ... esses pontos servem tanto para espalhar quanto para agrupar
+
+    </script>
+</body>
+</html>
