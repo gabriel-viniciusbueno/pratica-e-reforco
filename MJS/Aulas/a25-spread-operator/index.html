@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator - Introdução</title>
+</head>
+<body>
+    <script>
+        //Como faríamos sem Spread Operator
+        // const parts = ['ombro', 'joelho']
+        // const sentence = ['cabeça', parts[0], parts[1], 'pés']
+
+
+        //Com Spread Operator
+        const parts = ['ombro', 'joelho', 'orelha']
+        const sentence = ['cabeça', ...parts,'pés']
+
+
+        
+        const immutableArray = ['select', '*', 'from', 'posts']
+        const mutableArray = [...immutableArray]
+        mutableArray.push('where id = 1');
+        console.log(immutableArray);
+
+    </script>
+</body>
+</html>
