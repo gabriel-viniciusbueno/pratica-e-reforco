@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desestruturando Objetos</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name: 'gabriel',
+            age: 19,
+            contact: {
+                email: 'buenogabriel.oliveira7@gmail.com',
+            }
+        }
+
+        //para termos acesso ao nome e idade
+        // const name = person.name
+        // const age = person.age
+
+        //Com desestruturação podemos fazer isso em uma linha apenas
+        //Crie uma constante chamada 'name' que será desestruturada do objeto 'person'
+        //Para resgatar uma propriedade de um objeto dentro de outro objeto, se usa dois pontos 
+        const {name, age, contact: {email}} = person
+        console.log(`olá, meu nome é ${name} e eu tenho ${age} anos e meu email é ${email}`)
+    </script>
+</body>
+</html>

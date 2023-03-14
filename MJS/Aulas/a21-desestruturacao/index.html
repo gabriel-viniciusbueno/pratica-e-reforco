@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desestruturação - Introdução</title>
+</head>
+<body>
+    <script>
+        //Aula introdutória
+         const person = {
+            name: 'Gabriel',
+            age: 19
+         }
+
+         //A desestruturação serve para simplificar as situações onde os parâmetros de uma função podem aumentar. Utilizamos chaves para isso
+
+         function introduce ({name, age}){
+            console.log(`Oi, meu nome é ${nome} e eu tenho ${age} anos`)
+         }
+
+         const fruits = ['banana', 'manga', 'maçã']
+
+
+
+         //desestruturação também ajuda nesses casos
+        //  const firstFruit = fruits[0];
+        //  const secondFruit = fruits[1];
+         const [firstFruit, secondFruit] = fruits
+
+    </script>
+    
+</body>
+</html>
