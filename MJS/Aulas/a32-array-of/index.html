@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Of</title>
+</head>
+<body>
+    <script>
+        //Podemos criar arrays com o método 'new array'
+        //Tudo normal até que tentamos criar um array com apenas 1 valor. O que acontece é que ele pegou o valor '6' e criou 6 índices vazios que não conseguimos iterar
+        const array = new Array(6)
+        array.forEach( () => console.log(`a`))
+
+        //Podemos utilizar Array.of(6) nessa situação
+        //Ele cria um array cujo índice 0 tem valor de 6
+        const array2 = Array.of(6);
+
+    </script>
+</body>
+</html>
