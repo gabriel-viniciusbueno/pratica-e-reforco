@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desestruturando Funções</title>
+</head>
+<body>
+    <script>
+        //Factory Function
+        function createUser ({name, age, email}){
+            return {
+                name,
+                age,
+                contact: {email}
+            }
+        }
+
+        const user = createUser({
+            name: 'gabriel',
+            age: 19,
+            contact: {email: 'gabriel@email.com'}
+        })
+
+        console.log(user)
+
+        // const { contact:{email} } = createUser('gabriel', 19, 'buaneogabriel.77@outlook.com');
+        // console.log(email)
+
+    </script>
+</body>
+</html>
