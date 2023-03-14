@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Find</title>
+</head>
+<body>
+    <script>
+        const students = [
+            {name: 'gabriel', grade: 8},
+            {name: 'gab', grade: 6},
+            {name: 'briel', grade: 5},
+            {name: 'riel', grade: 9},
+            {name: 'gael', grade: 2},
+        ]
+
+        //O método Find está esperando um retorno igual o do método filter, ou seja, um valor truthy ou falsy
+        //O método Find vai retornar 1 item em específico e o método filter encontra 0 ou mais itens
+        const specificStudent = students.find(pupil => {
+            if (pupil.name === 'gael'){
+                return true
+            }
+        })
+    </script>
+</body>
+</html>
