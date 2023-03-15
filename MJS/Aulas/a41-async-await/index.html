@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async e Await</title>
+</head>
+<body>
+    <script>
+        //Uma função async espera o retorno de uma promise. Não é necessário fazer o resolve ou o reject, podemos apenas retornar uma promise resolvida ou dar throw em uma mensagem de erro
+        async function handleClick () {
+            throw 'Erro ao executar'
+            return 'Resolvido'
+        }
+
+
+
+
+
+        //Apesar de ser muito mais simples de se ler, temos uma limitação da async function
+        //Com esse tipo de função, não podemos encapsular uma setTimeout no resolve, por exemplo.
+
+        // async function handleClick2 () {
+        //     setTimeout( () => {
+        //         return 'Promise Resolvida? Acho que não...'
+        //     }, 1000)
+        // }
+        // handleClick2().then(console.log)
+
+        //Para resolver isso podemos converter o método setTimeout em um código assíncrono
+
+        function sleep (ms){
+            return new Promise(
+                resolve =>  {setTimeout(() => resolve(true), ms)}
+            )
+        }
+
+        async function handleClick2 () {
+            await sleep(5000)
+            return 'Promise Resolvida'
+        }
+    </script>
+</body>
+</html>
