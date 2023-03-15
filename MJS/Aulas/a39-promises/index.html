@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <script>
+        //O objeto Promise recebe uma função de callback, que vai receber 2 parâmetros
+
+        //Uma promise tem 3 estados: pendente, resolvida e rejeitada
+        const promise = new Promise((resolve, reject) =>{
+             setTimeout(() => {
+                // resolve('😂') // Agora a promise está resolvida
+                reject('😎') //Agora a promise está rejeitada
+
+                //Se declaramos uma promise como resolvida e rejeitada, vai prevalecer a que veio primeiro
+             }, 5000)
+        })
+    </script>
+</body>
+</html>

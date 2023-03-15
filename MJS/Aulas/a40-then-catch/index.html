@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Then e Catch</title>
+</head>
+<body>
+    <script>
+        //Para não executar todas as promises de uma vez, é uma prática comum encapsulá-las em uma função
+
+        function handleClick(){
+            return new Promise((resolve, reject) => {
+                setTimeout(() =>{
+                    resolve(123)
+                }, 5000)
+            })
+        }
+
+        //Uma característica da promise é que não temos acesso ao valor dela. Uma promise que retorna 123, não é igual ao valor 123. Por isso utilizamos then, cujo parâmetro é o resultado da promise.
+        const result = handleClick()
+        .then(res => {
+            console.log(123 === res)
+            console.log('finalizou')
+            return res
+        })
+
+        //Then é um bloco de código que só vai ser executado assim que a promise finalizar, e o seu valor de retorno que será o valor retornado pelo result
+
+
+        //Não é possível utilizar o then quando a promise foi rejeitada, e para isso que serve o catch
+
+    </script>
+</body>
+</html>
