@@ -13,6 +13,16 @@ calcBtn.addEventListener('click', function(){
     
     let totalCerveja = adultos * cervejaPP(duracao)
     let totalBebidas = adultos * bebidasPP(duracao) + (criancas * bebidasPP(duracao) / 2)
+
+
+    let paragrafoCarne = document.createElement('p')
+    let paragrafoCerveja = document.createElement('p')
+    let paragrafoBebidas = document.createElement('p')
+    paragrafoCarne.innerText = `${totalCarne}g de carne`
+    paragrafoCerveja.innerText += `${totalCerveja}ml de cerveja`
+    paragrafoBebidas.innerText += `${totalBebidas}ml de bebida`
+
+    resultado.append(paragrafoCarne, paragrafoCerveja, paragrafoBebidas)
 })
 
 function carnePP (duracao){
