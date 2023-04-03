@@ -9,8 +9,15 @@ image.addEventListener('click', function(){
 })
 
 const lista = document.getElementById('lista')
-const num = parseInt(lista.getAttribute('num'))
 
+lista.dataset.n = 4
+
+let id = lista.getAttribute('data-id')
+console.log(id)
+
+const num = parseInt(lista.dataset.n)
+
+console.log(lista.dataset.n)
 
 let conteudo = ''
 for( let i = 0; i < num; i++){
@@ -20,3 +27,4 @@ for( let i = 0; i < num; i++){
 lista.innerHTML = conteudo
 
 //Com isso, podemos manipular o código usando o HTML, desde que o JS esteja esperando por isso
+
