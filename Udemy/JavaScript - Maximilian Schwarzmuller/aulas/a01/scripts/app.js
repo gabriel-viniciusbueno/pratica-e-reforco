@@ -1,10 +1,14 @@
-let currentResult = 0
+let defaultResult = 0
+let currentResult = defaultResult
 
-currentResult += 10
+function add(num1, num2){
+    const result = num1 + num2
 
-outputResult(currentResult, '')
+    return result
+}
 
-let number = 30
-let strunger = '30'
+add()
+currentResult = (currentResult + 10) * 3 / 2 - 1
 
-console.log(number + strunger)
+let calculationDescription = `(${defaultResult} + 10)`
+outputResult(currentResult, calculationDescription)
