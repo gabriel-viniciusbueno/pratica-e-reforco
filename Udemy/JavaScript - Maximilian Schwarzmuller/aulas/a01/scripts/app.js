@@ -1,5 +1,6 @@
 let defaultResult = 0
 let currentResult = defaultResult
+let logEntries = []
 
 
 function createOutput(operator, resultBeforeCalc, calcNumber) {
@@ -12,6 +13,8 @@ function add(){
     const initialResult = currentResult;
     currentResult += enteredNumber
     createOutput('+', initialResult, enteredNumber)
+    logEntries.push(enteredNumber)
+    console.log(logEntries[0])
 }
 
 function subtract() {
