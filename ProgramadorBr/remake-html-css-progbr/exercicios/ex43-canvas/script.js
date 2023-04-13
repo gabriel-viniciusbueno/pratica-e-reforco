@@ -40,15 +40,37 @@ const ctx = tela.getContext('2d')
 
 
 
-const x = 250
-const y = 250
-const raio = 100
-const inicio = 0
-const fim = 2 * Math.PI
 
 
-ctx.beginPath()
-ctx.strokeStyle = 'red'
+const circle = {
+    x: 250,
+    y: 250,
+    raio: 100,
+    inicio: 0,
+    fim: 0
+}
+function drawCircle(c) { 
+    //Cada vez que a função desenhar um novo círculo, ela tmb vai desenhar um novo background, o que não gera o efeito estranho da cor
+    ctx.beginPath()
+    ctx.rect(0,0, 500, 500)
+    ctx.fillStyle = 'beige'
+    ctx.fill()
 
-ctx.arc(x, y, raio, inicio, fim)
-ctx.stroke()
+    ctx.beginPath()
+    ctx.strokeStyle = 'red'
+    ctx.arc(c.x, c.y, c.raio, c.inicio, c.fim)
+    ctx.stroke()
+
+    ctx.fill()
+    ctx.stroke()
+}
+
+setInterval(function () {
+    if( circle.fim < 2 * Math.PI){
+        circle.fim += 0.1
+        circle.x += 0.5
+        circle.y += 0.5;
+    }
+
+    drawCircle(circle)
+}, 5)
