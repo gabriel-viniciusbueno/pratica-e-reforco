@@ -1,6 +1,7 @@
 .container{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     background-color: darkgray;
     height: 400px;
@@ -20,5 +21,5 @@
 }
 
 .rect{
-
+    width: 150px;
 }
