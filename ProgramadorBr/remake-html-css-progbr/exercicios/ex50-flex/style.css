@@ -1,9 +1,10 @@
 .container{
     display: flex;
-    /* flex-direction: column;
-    flex-wrap: wrap; */
-
-    flex-flow: column wrap;
+    /* flex-direction: row;
+    flex-wrap: nowrap; */
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: stretch;
 
     background-color: darkgray;
     height: 400px;
