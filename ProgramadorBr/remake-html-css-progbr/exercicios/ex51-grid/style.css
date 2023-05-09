@@ -1,0 +1,28 @@
+.container{
+    color: white;
+    padding: 10px;
+    background-color: #333;
+    display: grid;
+
+    /* vamos definir uma grid de 3 colunas e 2 linhas */
+    grid-template-rows: auto auto ;
+    grid-template-columns: 1fr 2fr 1fr;
+    /* dentro do grid, tudo será linhas e colunas */
+
+    /* grid-template: auto auto / 1fr 2fr 1fr; SHORTHAND */
+}
+.r1{
+    background-color: orange;
+}
+
+.r2{
+    background-color: blueviolet;
+}
+
+.r3{
+    background-color: greenyellow;
+}
+
+.rect{
+
+}
