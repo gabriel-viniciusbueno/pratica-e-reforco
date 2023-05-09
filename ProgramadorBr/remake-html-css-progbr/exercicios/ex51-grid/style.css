@@ -10,12 +10,26 @@
     /* dentro do grid, tudo será linhas e colunas */
 
     /* SHORTHAND */
-    grid-template: auto auto / auto auto auto;
+    /* grid-template: auto auto / auto auto auto; */
 
     /* Pega todos os elementos de uma coluna e os reposiciona */
-    justify-items: flex-end;
-    align-items: center;
-    gap: 10px;
+    /* justify-items: center; */
+    /* align-items: center; */
+
+    /* Enquanto ITEMS modifica o grid individualmente, CONTENT modifica como um conjunto, retirando o comportamento padrão de stretch */
+    /* justify-content: flex-end; */
+
+    /* ITEMS vai fazer o elemento se posicionar dentro de sua linha, CONTENT vai fazer o elemento cobrir a linha por inteiro */
+    /* gap: 10px; */
+
+    grid-template-areas:
+    "a2 a2 a2 a2 a2 a2"
+    "a1 a1 a1 a3 a3 a3"
+    "a4 a4 a4 a5 a5 a5"
+    "a6 a6 a6 a6 a6 a6"
+    ;
+
+
 }
 .r1{
     background-color: orange;
@@ -26,12 +40,31 @@
 }
 
 .r3{
-    background-color: greenyellow;
+    background-color: green;
 }
 
 .rect{
 
-    width: 100px;
-    height: 100px;
+    /* width: 100px; */
+    /* height: 100px; */
 
+}
+
+.item1{
+    grid-area: a1;
+}
+.item2{
+    grid-area: a2;
+}
+.item3{
+    grid-area: a3;
+}
+.item4{
+    grid-area: a4;
+}
+.item5{
+    grid-area: a5;
+}
+.item6{
+    grid-area: a6;
 }
