@@ -5,11 +5,17 @@
     display: grid;
 
     /* vamos definir uma grid de 3 colunas e 2 linhas */
-    grid-template-rows: auto auto ;
-    grid-template-columns: 1fr 2fr 1fr;
+    /* grid-template-rows: auto auto ;
+    grid-template-columns: 1fr 2fr 1fr; */
     /* dentro do grid, tudo será linhas e colunas */
 
-    /* grid-template: auto auto / 1fr 2fr 1fr; SHORTHAND */
+    /* SHORTHAND */
+    grid-template: auto auto / auto auto auto;
+
+    /* Pega todos os elementos de uma coluna e os reposiciona */
+    justify-items: flex-end;
+    align-items: center;
+    gap: 10px;
 }
 .r1{
     background-color: orange;
@@ -24,5 +30,8 @@
 }
 
 .rect{
+
+    width: 100px;
+    height: 100px;
 
 }
