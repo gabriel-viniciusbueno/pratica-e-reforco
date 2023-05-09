@@ -1,6 +1,6 @@
 .container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     align-content: center;
@@ -11,18 +11,23 @@
 }
 
 .r1{
+    flex-grow: 1;
     background-color: royalblue;
 }
 
 .r2{
+    /* Flex grow permite que o elemento aumente de acordo com o espaço disponível */
+    flex-grow: 1; 
     background-color: orangered;
 }
 
 .r3{
+    order: -1;
+    flex-grow: 1 ;
     background-color: green;
 }
 
 .rect{
-    width: 150px;
+
     height: 150px;
 }
