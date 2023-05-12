@@ -42,3 +42,28 @@ function nameAge(student){
 console.log(students.map(nameAge)) // Com map, criamos um array totalmente novo mas usando do array principal para basear seus elementos
 
 //Tenho que ter cuidado com map, pois ele pode sobrerescrever o array principal
+
+
+
+
+///////////////////////////
+// REDUCE
+
+
+function novoAluno(nome, idade){
+    return {nome, idade}
+}
+
+const alunos = [
+    novoAluno('Mario', 23),
+    novoAluno('Diane', 33),
+    novoAluno('Gabriel', 19),
+    novoAluno('jao', 13),
+]
+
+// a função vai pegar todo o nosso array e transformar num único resultado. Então vamos somar a idade de todos os alunos
+function idadeDaTurma(total, aluno){
+    return total + aluno.idade
+}
+
+console.log(alunos.reduce(idadeDaTurma, 0)) // PRECISAMOS passar o total antes de iniciar a função. No caso é 0
