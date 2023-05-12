@@ -44,6 +44,7 @@ let alunoA = {name: 'gabriel', yo: 19}
 // let alunoB = Object.assign({}, alunoA) podemos fazer assim
 
 let alunoB = {...alunoA} // Ou assim... que é bem melhor
+//O nome disso é spread Operator
 
 alunoB.idade = 25
 
