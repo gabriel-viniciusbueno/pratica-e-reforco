@@ -10,19 +10,17 @@ function handleClick(e){
     let square = e.target
     let position = square.id
 
-    handleMove(position)
-    updateSquares()
+    if(handleMove(position)){
+        setTimeout(()=>{
+            alert('O jogo acabou!')
+        },10)
+        
+    }
+    updateSquare(position)
 }
 
-function updateSquares(){
-    const squares = document.querySelectorAll('.square')
-
-    squares.forEach((square)=>{
-        let position = square.id
-        let symbol = board[position]
-
-        if(symbol !== ''){
-            square.innerHTML = `<div class='${symbol}'></div>`
-        }
-    })
+function updateSquare(position){
+    let square = document.getElementById(position.toString())
+    let symbol = board[position]
+    square.innerHTML = `<div class='${symbol}'></div>`
 }
