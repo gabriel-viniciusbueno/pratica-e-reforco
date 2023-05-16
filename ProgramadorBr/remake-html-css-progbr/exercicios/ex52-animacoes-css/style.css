@@ -10,5 +10,13 @@
     height: 200px;
     border-style: solid;
     animation-name: changeColor;
-    animation-duration: 6s;
+    animation-duration: 2s;
+
+    /* animation-delay: 1s; Faz um atraso na animação  */
+    
+    animation-iteration-count: infinite; /* Define qunatas vezes a animação será feita. Pode receber um número ou o valor 'infinito' */
+
+    /*animation-direction: reverse;
+    Faz com que a animação siga ao contrário, indo de 100% a 0%*/
+    animation-direction: alternate /*Alternate primeiro segue a ordem, daí inverte, aí segue de novo, e assim vai até a animação acabar*/
 }
