@@ -14,12 +14,14 @@ body{
 }
 
 .card{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     position: relative;
 
     transform-style: preserve-3d;
     transition: transform 0.5s;
+
+    cursor: pointer;
 }
 
 .card-back, .card-front{
@@ -47,7 +49,12 @@ body{
     background-color: #05C3FF;
     font-size: 30px;
 
+    transition: 0.3s;
+}
 
+.card-back:hover{
+    background-color:#059fff;
+    scale: 1.1;
 }
 
 #game-over{
