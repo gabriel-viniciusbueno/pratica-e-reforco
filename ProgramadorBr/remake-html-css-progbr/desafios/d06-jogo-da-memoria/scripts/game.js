@@ -43,7 +43,7 @@ let game = {
     },
 
     checkGameOver(){
-        return this.cards.filter(card => !card.flipped).length === 0
+        return this.cards.filter(card => !card.flipped).length == 0
     },
     techs: ['bootstrap',
         'css',

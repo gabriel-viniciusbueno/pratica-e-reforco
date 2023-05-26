@@ -14,7 +14,7 @@ function startGame() {
 
 function initializeCards(cards) {
     let gameBoard = document.getElementById('gameboard')
-
+    gameBoard.innerHTML = ''
     game.cards.forEach(card => {
         let cardElement = document.createElement('div')
         cardElement.id = card.id
@@ -61,6 +61,10 @@ function flipCard() {
         if (game.secondCard) {
             if (game.checkMatch()) {
                 game.clearCards()
+                if(game.checkGameOver()){
+                    let gameOverLayer = document.querySelector('#game-over')
+                    gameOverLayer.style.display = 'flex'
+                }
             } else {
                 setTimeout(() => {
                     let firstCardView = document.getElementById(game.firstCard.id)
@@ -75,4 +79,11 @@ function flipCard() {
             }
         }
     }
+}
+
+function restart(){
+    game.clearCards()
+    startGame()
+    let gameOverLayer = document.getElementById('game-over')
+    gameOverLayer.style.display = 'none'
 }
