@@ -11,51 +11,72 @@ const RESULT_PLAYER_LOST = 'YOU LOST'
 
 let gameIsRunning = false
 
-const getPlayerChoice = function(){
-  const selection = prompt(`${ROCK}, ${PAPER} or ${SCISSORS}?`,'').toUpperCase()
+const getPlayerChoice = function () {
+  const selection = prompt(`${ROCK}, ${PAPER} or ${SCISSORS}?`, '').toUpperCase()
 
-  if(selection !== ROCK &&
-     selection !== PAPER &&
-     selection !== SCISSORS){
+  if (selection !== ROCK &&
+    selection !== PAPER &&
+    selection !== SCISSORS) {
     alert(`Invalid Choice! We choose ${DEFAULT_USER_CHOICE} for you!`)
-    return DEFAULT_USER_CHOICE
+    return
   }
   return selection
 }
 
-const getComputerChoice = function() {
+const getComputerChoice = function () {
   const randomValue = Math.random()
-  if(randomValue < 0.34){
+  if (randomValue < 0.34) {
     return ROCK
-  } else if (randomValue < 0.67){
+  } else if (randomValue < 0.67) {
     return PAPER
-  } else{
+  } else {
     return SCISSORS
   }
 }
 
-const getWinner = function (cChoice, pChoice){
-  if(cChoice === pChoice){
-    return RESULT_DRAW
-  } else if(
-    cChoice === ROCK && pChoice === PAPER ||
+const getWinner = (cChoice, pChoice = DEFAULT_USER_CHOICE) => 
+  cChoice === pChoice
+  ? RESULT_DRAW
+  : cChoice === ROCK && pChoice === PAPER ||
     cChoice === PAPER && pChoice === SCISSORS ||
-    cChoice === SCISSORS && pChoice === ROCK
-    ){
-    return RESULT_PLAYER_WINS
-  } else {
-    return RESULT_PLAYER_LOST
-  }
-}
+    cChoice === SCISSORS && pChoice === ROCK 
+  ? RESULT_PLAYER_WINS
+  : RESULT_PLAYER_LOST
 
-startGameBtn.addEventListener('click', function (){
-  if(gameIsRunning){
+  // if (cChoice === pChoice) {
+  //   return RESULT_DRAW
+  // } else if (
+  //   cChoice === ROCK && pChoice === PAPER ||
+  //   cChoice === PAPER && pChoice === SCISSORS ||
+  //   cChoice === SCISSORS && pChoice === ROCK
+  // ) {
+  //   return RESULT_PLAYER_WINS
+  // } else {
+  //   return RESULT_PLAYER_LOST
+  // }
+
+startGameBtn.addEventListener('click', function () {
+  if (gameIsRunning) {
     return
   }
   gameIsRunning = true
- 
+
   const playerChoice = getPlayerChoice()
   const computerChoice = getComputerChoice()
-  const winner = getWinner(computerChoice, playerChoice)
-  console.log(winner);
+  let winner
+  if(playerChoice){
+    winner = getWinner(computerChoice, playerChoice)
+  } else {
+    winner = getWinner(computerChoice)
+  }
+  let message = `You picked ${playerChoice || DEFAULT_USER_CHOICE} and Computer picked ${computerChoice}, therefore you `
+  if(winner === RESULT_DRAW){
+    message += 'had a draw.'
+  } else if(winner === RESULT_PLAYER_WINS){
+    message += 'won.'
+  } else{
+    message += 'lost.'
+  }
+  alert(message)
+  gameIsRunning = false
 })
