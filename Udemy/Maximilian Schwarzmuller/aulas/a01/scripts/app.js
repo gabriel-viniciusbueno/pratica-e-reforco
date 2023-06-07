@@ -4,11 +4,11 @@ let logEntries = []
 
 
 function createOutput(operator, resultBeforeCalc, calcNumber) {
-    const calcDescription =  `${resultBeforeCalc} ${operator} ${calcNumber}`
+    const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`
     outputResult(currentResult, calcDescription)
 }
 
-function writeToLog(operationIdentifier, prevResult, operationNumber, newResult){
+function writeToLog(operationIdentifier, prevResult, operationNumber, newResult) {
     const logEntry = {
         operation: operationIdentifier,
         prevResult: prevResult,
@@ -21,41 +21,30 @@ function writeToLog(operationIdentifier, prevResult, operationNumber, newResult)
 }
 
 
-function add(){
+function calculate(operation) {
     const enteredNumber = parseFloat(userInput.value)
     const initialResult = currentResult;
-    currentResult += enteredNumber
-    createOutput('+', initialResult, enteredNumber)
-    writeToLog('ADD', initialResult, enteredNumber, currentResult)
+    let operator
+    if (operation === 'ADD') {
+        currentResult += enteredNumber
+        operator = '+'
+
+    } else if (operation === 'SUBTRACT') {
+        currentResult -= enteredNumber
+        operator = '-'
+    } else if(operation === 'MULTIPLY'){
+        currentResult *= enteredNumber
+        operator = '*'
+    } else {
+        currentResult /= enteredNumber
+        operator = '/'
+    }
+    createOutput(operator, initialResult, enteredNumber)
+    writeToLog(operation, initialResult, enteredNumber, currentResult)
 }
 
-function subtract() {
-    const enteredNumber = parseFloat(userInput.value)
-    const initialResult = currentResult;
-    currentResult -= enteredNumber
-    createOutput('-', initialResult, enteredNumber)
-    writeToLog('SUBTRACT', initialResult, enteredNumber, currentResult)
-}
-
-
-function multiply() {
-    const enteredNumber = parseFloat(userInput.value)
-    const initialResult = currentResult;
-    currentResult *= enteredNumber
-    createOutput('*', initialResult, enteredNumber)
-    writeToLog('MULTIPLY', initialResult, enteredNumber, currentResult)
-}
-
-function divide() {
-    const enteredNumber = parseFloat(userInput.value)
-    const initialResult = currentResult;
-    currentResult /= enteredNumber
-    createOutput('/', initialResult, enteredNumber)
-    writeToLog('DIVIDE', initialResult, enteredNumber, currentResult)
-}
-
-addBtn.addEventListener('click', add)
-subtractBtn.addEventListener('click', subtract)
-multiplyBtn.addEventListener('click', multiply)
-divideBtn.addEventListener('click', divide)
+addBtn.addEventListener('click', calculate.bind(this,'ADD'))
+subtractBtn.addEventListener('click', calculate.bind(this,'SUBTRACT'))
+multiplyBtn.addEventListener('click', calculate.bind(this,'MULTIPLY'))
+divideBtn.addEventListener('click', calculate.bind(this,'DIVIDE'))
 
